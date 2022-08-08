@@ -11,20 +11,23 @@ import { Link} from "react-router-dom";
    let menores = []
    
     return(
-      <>
-         <div>
+      <>            
             <h1>estadisticas</h1>
             <h4>mayores de 35 años:</h4>
+            <div className="row">
+
+
             {mayores35.map((mayor)=>{
                return(
-               <div className="card" style={{width: 30+"%"}}>
-               <div className="card-body">
-                   <h5 className="card-title">{mayor.nombre+ " "+ mayor.apellido}</h5>
-                   <Link className="btn btn-primary" to={'/persona/'+mayor.id}>mas info</Link>
-               </div>
-           </div>
+               <div className="col-lg-3 col-md-3 col-sm-6">
+                  <div className="card" style={{width: 100+"%", margin: 5+"px",padding:"10px"}}>
+                     <div className="card-body">
+                        <h5 className="card-title">{mayor.nombre+ " "+ mayor.apellido}</h5>
+                        <Link className="btn btn-secondary" to={'/persona/'+mayor.id}>mas info</Link>
+                     </div>
+                  </div>
+            </div>
             )})}
-            <h4>gente con la mayor edad:</h4>
             {
                listado.map((mayor)=>{
                   if(mayor.edad>mayorEdad){
@@ -49,8 +52,26 @@ import { Link} from "react-router-dom";
                })
                
             }
-            <h5>personas con mas edad: {mayores.map((mayores)=> {return(mayores.nombre +" "+mayores.edad+" años")})}</h5>
-            <h5>personas con menos edad: {menores.map((menores)=> {return(menores.nombre +" "+menores.edad+" años")})}</h5>
+            <h4>personas mas ancianas: {mayores.map((mayores)=> {return(
+               <div className="col-lg-3 col-md-3 col-sm-6">
+               <div className="card" style={{width: 100+"%", margin: 5+"px",padding:"10px"}}>
+                  <div className="card-body">
+                     <h5 className="card-title">{mayores.nombre+ " "+ mayores.apellido}</h5>
+                     <Link className="btn btn-secondary" to={'/persona/'+mayores.id}>mas info</Link>
+                  </div>
+               </div>
+         </div>
+            )})}</h4>
+            <h4>personas mas jovenes: {menores.map((menores)=> {return(
+               <div className="col-lg-3 col-md-3 col-sm-6">
+               <div className="card" style={{width: 100+"%", margin: 5+"px",padding:"10px"}}>
+                  <div className="card-body">
+                     <h5 className="card-title">{menores.nombre+ " "+ menores.apellido}</h5>
+                     <Link className="btn btn-secondary" to={'/persona/'+menores.id}>mas info</Link>
+                  </div>
+               </div>
+         </div>
+               )})}</h4>
             {console.log(menores)}
          </div>
       </>

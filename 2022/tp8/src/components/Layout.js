@@ -4,9 +4,9 @@ import { Link, Outlet } from "react-router-dom";
 export default function Layout(){
     return(
         <>
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark nabar">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Navbar</a>
+                <a className="navbar-brand" href="#">PersonFinder</a>
                 <div id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
@@ -22,7 +22,7 @@ export default function Layout(){
                 </div>
             </div>
         </nav>
-        <div className="container">
+        <div className="container-fluid">
             <Outlet />
         </div>
         <footer style={{bottom:0,height:"150px",width:"100%",background:"#000",marginTop: "auto"}}>
