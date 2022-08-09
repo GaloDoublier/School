@@ -24,9 +24,18 @@ export default function Layout(){
         </nav>
         <div className="container-fluid">
             <Outlet />
+            <div style={{paddingTop:"200px"}}></div>
         </div>
-        <footer style={{bottom:0,height:"150px",width:"100%",background:"#000",marginTop: "auto"}}>
+        <footer>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <h2 className="my-auto" style={{color:"#fff"}}>Trabajo realizado por Galo D, Fabrizio M y Gero B</h2>
+                    </div>
 
+                </div>
+
+            </div>
         </footer>
         </>
     )
