@@ -1,7 +1,7 @@
 import { useState } from 'react';
 export default function (props){
-    const [ciudad,setCiudad] = useState("")
-    const [pais,setPais] = useState("")
+    const [ciudad,setCiudad] = useState("Madrid")
+    const [pais,setPais] = useState("España")
     const  traerInfo = (c,p) => {
             props.setTemp("Cargando...")
         fetch("http://api.openweathermap.org/data/2.5/weather?q="+c+","+p+"&APPID=467eb2e2a1738c82e813a30610d7c354")
@@ -13,6 +13,7 @@ export default function (props){
             props.setTempMin((data.main.temp_min-273.15).toFixed(2))
             props.setHumedad(data.main.humidity)
             props.setClima(data.weather[0].description)
+            props.setFoto("http://openweathermap.org/img/w/" + data.weather[0].icon+ ".png")
           })
        }
     return(

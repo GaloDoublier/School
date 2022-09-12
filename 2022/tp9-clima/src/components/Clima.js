@@ -19,10 +19,15 @@ export default function Clima(props){
                 </div>
             </div>
             <div className="row">
-                <h3>Humedad</h3>
-                <h4>{props.humedad}</h4>
-                <h3>descripcion</h3>
-                <h4>{props.clima}</h4>
+                <div className="col">
+                    <h3>Humedad</h3>
+                    <h4>{props.humedad}</h4>
+                    <h3>descripcion</h3>
+                    <h4>{props.clima}</h4>
+                </div>
+                <div className="col">
+                <div id="icon"><img class="icon" src={props.foto} alt="Weather icon"/></div>
+                </div>
             </div>
 
 
