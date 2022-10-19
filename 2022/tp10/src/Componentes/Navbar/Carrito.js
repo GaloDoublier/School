@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import { useState,useContext, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { CarritoContext } from "../../App";
+
 export default function Carrito(){
+
+    // const [contador,setContador] = useState(0)
+
+    const item = useContext(CarritoContext)
+
+    console.log(item.productosCarrito)
+    //poner un usefect que se ejecute cuando cambie item.productosCarrito
 
     const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(()=>{
+    console.log("acutalizado")
+  },item.productosCarrito)
 
     return(
         <>

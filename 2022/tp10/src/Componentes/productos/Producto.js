@@ -1,5 +1,13 @@
-import React from "react";
+import {useContext} from "react";
+import { CarritoContext } from "../../App";
+
 export default function Producto(props){
+
+        const a = useContext(CarritoContext)
+        
+
+
+
     return(
         <div className="col-md-4 carta">
                   <div className="card tarjeta" /*style=" margin-top: 20px;"*/>
@@ -8,7 +16,15 @@ export default function Producto(props){
                           <b className="card-title ">{props.nombre}</b>
                           <p className="card-text">${props.precio}</p>
                           <p className="card-text">{props.descripcion}</p>
-                          <button class="btn btn-primary">agregar</button>
+                          <button class="btn btn-primary" onClick={()=>{
+                            let datos ={
+                                nombre:props.nombre,
+                                precio:props.precio,
+                                descripcion:props.descripcion,
+                                foto:props.foto
+                            }
+                            a.setProductos([datos])
+                          }}>agregar</button>
                       </div>
                   </div>
               </div>

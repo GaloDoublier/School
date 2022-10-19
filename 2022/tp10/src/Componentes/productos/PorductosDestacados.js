@@ -1,6 +1,8 @@
 import { React } from "react";
 import Producto from "./Producto";
 import listaProductos from "./listaProductos";
+
+
 export default function ProductosDestacados () {
     let lista = listaProductos
     return(
