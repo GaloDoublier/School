@@ -12,7 +12,7 @@ import styles from "./styles.css"
 export const CarritoContext = createContext();
 
 function App() {
-  const [productosCarrito,setProductos]=useState(["holaaa","chauuu"]);
+  const [productosCarrito,setProductos]=useState([]);
   return (
     <BrowserRouter>
         <CarritoContext.Provider value={{productosCarrito,setProductos}}>

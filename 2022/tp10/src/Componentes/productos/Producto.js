@@ -23,7 +23,7 @@ export default function Producto(props){
                                 descripcion:props.descripcion,
                                 foto:props.foto
                             }
-                            a.setProductos([datos])
+                            a.setProductos([...a.productosCarrito,datos])
                           }}>agregar</button>
                       </div>
                   </div>
