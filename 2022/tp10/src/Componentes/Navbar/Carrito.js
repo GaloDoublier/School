@@ -26,7 +26,7 @@ export default function Carrito(){
   
 
   useEffect(()=>{
-    setContador(contador+1)
+    setContador(item.productosCarrito.length)
     item.productosCarrito.forEach(element => {
         totall += (element.precio*21)/100+element.precio
     });
