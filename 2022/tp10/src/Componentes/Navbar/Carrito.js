@@ -64,12 +64,13 @@ export default function Carrito(){
                     <th scope="col"></th>
                     <th scope="col">Product</th>
                     <th scope="col">Price</th>
+                    <th scope="col">cantidad</th>
                     <th scope="col">Total + Impuestos</th>
                     <th scope="col"></th>
                     </tr>
                 </thead>
                 {
-                    item.productosCarrito.map((producto)=><ProductoCarrito nombre={producto.nombre} foto={producto.foto} desc={producto.descripcion} precio={producto.precio}></ProductoCarrito>)
+                    item.productosCarrito.map((producto)=><ProductoCarrito cantidad={producto.cantidad} nombre={producto.nombre} foto={producto.foto} desc={producto.descripcion} precio={producto.precio}></ProductoCarrito>)
 
                 }
             </table>

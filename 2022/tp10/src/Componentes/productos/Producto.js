@@ -7,11 +7,14 @@ export default function Producto(props){
         const [compra,setCompra]=useState(false)
         const [contador,setContador]=useState(a.productosCarrito.length)
 
+        let cant = 1;
+
         let datos ={
             nombre:props.nombre,
             precio:props.precio,
             descripcion:props.descripcion,
-            foto:props.foto
+            foto:props.foto,
+            cantidad:cant
         }
 
 
@@ -24,7 +27,7 @@ export default function Producto(props){
         function Eliminar(){
             setContador(contador-1)
             a.setProductos(
-                a.productosCarrito.filter((productos,item)=> a.productosCarrito.indexOf(item)!=item)
+                a.productosCarrito.filter((productos)=> productos.nombre!=datos.nombre)
             )
         }
 
@@ -45,7 +48,7 @@ export default function Producto(props){
                               <p className="card-text">${props.precio}</p>
                               <p className="card-text">{props.descripcion}</p>
                               <div style={{display:"inline"}}>
-                                <p>agregado</p><button class="btn btn-primary" onClick={()=>agregar()}>+</button><span>{contador}</span><button class="btn btn-primary" onClick={()=>Eliminar()}>-</button>
+                              <button class="btn btn-primary" disabled onClick={()=>agregar()}>agregado</button><button class="btn btn-danger" onClick={()=>Eliminar()}>X</button>
                               </div>  
                           </div>
                       </div>
