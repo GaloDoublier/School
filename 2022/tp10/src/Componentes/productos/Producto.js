@@ -25,17 +25,24 @@ export default function Producto(props){
         }
         
         function Eliminar(){
+            setCompra(false)
             setContador(contador-1)
             a.setProductos(
                 a.productosCarrito.filter((productos)=> productos.nombre!=datos.nombre)
             )
         }
 
+
+        //chequear el estado de la compra cuando inicia una pagina
         useEffect(()=>{
-            if(contador==0){
-                setCompra(false)
-            }
-        },[contador])
+            setCompra(false);
+
+            a.productosCarrito.forEach(producto => {
+                if(producto.nombre==datos.nombre){
+                    setCompra(true)
+                }
+            });
+        },[a.productosCarrito])
 
 
     if(compra){

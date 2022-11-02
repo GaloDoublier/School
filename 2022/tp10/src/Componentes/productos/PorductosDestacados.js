@@ -12,7 +12,12 @@ export default function ProductosDestacados () {
           </div>
           <div className="row ">
           {
-            lista.map((producto)=><Producto nombre={producto.nombre} precio={producto.precio} descripcion={producto.descripcion} foto={producto.foto}></Producto>)
+            lista.map((producto)=>{
+              if(producto.destacado){
+                return <Producto nombre={producto.nombre} precio={producto.precio} descripcion={producto.descripcion} foto={producto.foto}></Producto>
+              }
+            
+          })
           }
             </div>
 

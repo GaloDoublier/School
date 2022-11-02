@@ -10,11 +10,9 @@ export default function ProductoCarrito(props){
     const [precio,setPrecio]=useState(((props.precio*IVA)/100+props.precio)*cantidad);
 
     
-    function eliminarProducto(productoAeliminar){
-        item.setProductos(
-            item.productosCarrito.filter((productos)=> productos.nombre!=productoAeliminar.nombre)
-        )
-        console.log(item.ProductoCarrito)
+    function eliminarProducto(){
+        let data = item.productosCarrito.filter((productos)=> productos.nombre!=props.nombre)
+        item.setProductos(data)
     }
 
     function cambioCant(e){
@@ -60,7 +58,7 @@ export default function ProductoCarrito(props){
                     </td>
                     <td>${precio}</td>
                     <td>
-                        <button className="btn btn-danger btn-sm" onClick={()=>eliminarProducto(props)}>Eliminar</button>
+                        <button className="btn btn-danger btn-sm" onClick={()=>eliminarProducto()}>Eliminar</button>
                     </td>
                     </tr>
                 </tbody>
