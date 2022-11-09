@@ -20,7 +20,7 @@
     font-size:370%;
     color:#fff;
     position:relative;
-    left:35%;
+    left:23%;
 }
 
 .smash:hover{
@@ -38,13 +38,17 @@ body{
 .container{
     position: fixed;
     left:30%;
-    top:20%;
+    top:3%;
 }
 h1{
     font-size: 100px;
 }
 .or{
     position:relative;
-    left:16%;
+    left:12%;
     font-size: 70px;
+}
+.imagen{
+    height: 500px;
+    width: 100%;
 }

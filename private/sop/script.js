@@ -8,6 +8,7 @@ function pasar(){
     imagen.onerror=()=>{
         pasar()
     }
+    imagen.setAttribute("class","imagen")
     divImagen.appendChild(imagen)
     contador++
 }
